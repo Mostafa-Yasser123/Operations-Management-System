@@ -5,19 +5,17 @@ from app.core.config import settings
 
 
 DATABASE_URL = (
-    f"postgresql://{settings.DB_USER}:"
-    f"{settings.DB_PASSWORD}@"
-    f"{settings.DB_HOST}:"
-    f"{settings.DB_PORT}/"
-    f"{settings.DB_NAME}"
+    f"postgresql://{settings.db_user}:"
+    f"{settings.db_password}@"
+    f"{settings.db_host}:"
+    f"{settings.db_port}/"
+    f"{settings.db_name}"
 )
-
 
 engine = create_engine(
     DATABASE_URL,
     echo=True
 )
-
 
 SessionLocal = sessionmaker(
     autocommit=False,

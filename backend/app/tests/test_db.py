@@ -1,7 +1,7 @@
 from sqlalchemy import text
 
 from app.database.session import engine
-
+from app.modules.users.model import User
 
 try:
     with engine.connect() as connection:
@@ -13,3 +13,5 @@ try:
 except Exception as e:
     print("Database connection failed ❌")
     print(e)
+
+print(User.__tablename__)
